@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Cineplan Cinema Program</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/app.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        
+        <div id="headerWrapper" ng-controller="HeaderCtrl">
+            <img class="logo" src="{{appDetails.logo}}" alt="{{appDetails.title}}">
+            <!--<div class="nav-wrapper pull-left">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#">Shows</a></li>
+                    <li><a href="#">Reservations</a></li>
+                </ul>
+            </div>-->
+        </div>
+		<div  class="container" ng-controller="ShowsCtrl">
+			<ul class="list-unstyled">
+			<li  class="list-group-item" ng-repeat="show in shows">
+				<div class="row">
+					<div class="col-xs-2 col-md-2">
+						<div class="row">
+							<img class="poster" src="imgs/{{show.poster}}" alt="{{show.movietitle}}" width="320">
+						</div>
+					</div>
+					<div class="col-xs-8 col-md-8">
+						<div class="row">
+							<div class="col-xs-12 col-md-12"><h3>{{show.movietitle}}</h3></div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6 col-md-6">.col-xs-6 .col-md-10</div>
+							<div class="col-xs-6 col-md-6">.col-xs-6 .col-md-2</div>
+					</div>
+				<div class="row">
+					
+					<div class="col-xs-3 col-md-5">.col-xs-3 .col-md-5</div>
+					<div class="col-xs-6 col-md-10">.col-xs-6 .col-md-10</div>
+					<div class="col-xs-6 col-md-2">.col-xs-6 .col-md-2</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-6">.col-xs-6</div>
+					<div class="col-xs-6">.col-xs-6</div>
+				</div>
+			</li>
+			</ul>
+		</div>
+		
+<!--		<div id="showListWrapper" ng-controller="ShowsCtrl">
+			<div>
+			<ul class="list-unstyled">
+				<li class="show" ng-repeat="show in shows"
+					style="background: white url('imgs/{{show.imgUrl}}') no-repeat">
+					<div class="show-details clearfix">
+						<h3>{{show.name}}</h3>
+						<p>{{show.price}}</p>
+						<ul class="list-unstyled list-inline">
+							<li>Rating: {{show.rating}}</li>
+							<li>Binding: {{show.binding}}</li>
+							<li>Publisher: {{show.publisher}}</li>
+							<li>Released: {{show.releaseDate}}</li>
+						</ul>
+						<p>{{show.details}}</p>
+						<button class="btn btn-info pull-right" ng-click="addToReservation(show)">Reservation</button>
+					</div>
+				</li>
+			</ul>
+		</div>-->
+    </body>
+</html>
