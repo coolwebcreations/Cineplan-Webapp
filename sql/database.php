@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-$conn = new mysqli("myServer", "myUser", "myPassword", "Northwind");
+$conn = new mysqli("myServer", "myUser", "myPassword", "myBase");
 
 $result = $conn->query("SELECT movie, showdate, showtime FROM cineplan_shows");
 
